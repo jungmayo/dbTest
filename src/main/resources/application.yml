@@ -1,0 +1,37 @@
+spring:
+  application:
+    name: dbTest/
+
+  devtools:
+    livereload:
+      enabled: true
+    restart:
+      enabled: false
+
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: test1
+
+  datasource:
+    url: jdbc:oracle:thin:@localhost:1521/XE
+    username: C##TEST1
+    password: Aa13665946
+    driver-class-name: oracle.jdbc.OracleDriver
+
+server:
+  port: 8080
+  servlet:
+    context-path: /dbtest
+
+logging:
+  level:
+    root: INFO
+    com.example.dbtest.mapper: DEBUG
+
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+
+mybatis:
+  mapper-locations: classpath:mapper/**/*.xml
